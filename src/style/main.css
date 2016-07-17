@@ -1,0 +1,162 @@
+body {
+    font-family: "LatoLatinWebLight", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    color: #535353;
+}
+
+body .wrapper {
+
+}
+
+body .wrapper .head {
+    height: 633px;
+    background-size: cover;
+    background-image: url(../images/city-sunny-people-street.jpg);
+}
+
+body .wrapper .head .nav {
+    padding: 50px 130px 0 130px;
+}
+
+    body .wrapper .head .nav .logo {
+        width: 354px;
+    }
+
+    body .wrapper .head .nav .menu {
+        padding: 0;
+        margin: 30px 0 0 0;
+        list-style-type: none;
+
+    }
+
+        body .wrapper .head .nav .menu li {
+            vertical-align: middle;
+            display: table-cell;
+            padding: 0 30px;
+            height: 35px;
+        }
+
+        body .wrapper .head .nav .menu li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+
+body .wrapper .head .hero {
+    padding: 142px 130px 0 130px;
+}
+
+    body .wrapper .head .hero .verse {
+        text-align: center;
+        font-size: 40px;
+        font-style: italic;
+        color: #ffffff;
+    }
+
+    body .wrapper .head .hero .verse-ref {
+        text-align: center;
+        color: #ffffff;
+        padding: 9px 0 0 0;
+        font-size: 20px;
+    }
+
+    body .wrapper .head .hero .cta {
+        padding: 75px 0 0 0;
+    }
+
+    body .wrapper .head .hero .cta .button {
+        margin: auto;
+        line-height: 50px;
+        text-align: center;
+        color: #fff;
+        width: 190px;
+        height: 50px;
+        border-radius: 100px;
+        background-color: #49b0e4;
+        font-size: 20px;
+        font-family: 'LatoLatinWebLight',"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    }
+
+
+body .wrapper .content {
+    padding: 46px 130px 0 130px;
+}
+
+body .wrapper .footer {
+    background: #52246c;
+}
+
+    body .wrapper .footer .nav {
+        padding: 30px 130px;
+    }
+
+
+        body .wrapper .footer .nav .menu {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            height: 60px;
+        }
+
+        body .wrapper .footer .nav .menu li {
+            margin: 0 80px 0 0;
+            padding: 4px 0;
+        }
+
+        body .wrapper .footer .nav .menu li a {
+            color: #c6c6c6;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        body .wrapper .footer .nav .menu li a:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        body .wrapper .footer .nav .adventech {
+            float: right;
+            height: 30px;
+        }
+
+    body .wrapper .footer .copyright {
+        padding: 16px 0;
+        border-top: 1px solid #5c3473;
+    }
+
+        body .wrapper .footer .copyright p {
+            opacity: 0.5;
+            font-size: 12px;
+            font-weight: normal;
+            text-align: center;
+            font-family: "LatoLatinWeb","HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            color: #ffffff;
+        }
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-family: "LatoLatinWeb","HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 36px;
+    line-height: 50px;
+    margin: 30px 0;
+}
+
+.copy {
+    margin: 40px 0;
+    line-height: 27px;
+    font-size: 17px;
+}
+
+.featured-copy {
+    width: 500px;
+    border-radius: 6px;
+    border: solid 1px #d8d8d8;
+    padding: 20px;
+    margin: auto;
+    font-size: 30px;
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;
+    color: #535353;
+}
