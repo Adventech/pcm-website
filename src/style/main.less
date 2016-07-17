@@ -14,79 +14,209 @@ body {
 
 .wrapper {
   .head {
-    height: 633px;
-    background-size: cover;
     background-image: url(../images/city-sunny-people-street.jpg);
+    background-repeat: no-repeat;
+    background-size: 400%;
+    background-position: 60% 0;
+
+    @media @tablet {
+      background-size: 250%;
+      background-position: 0 50%;
+    }
+    @media @desktop {
+      background-size: cover;
+      height: 633px;
+    }
 
     .nav {
-      padding: 50px @gutter 0 @gutter;
+      .span_4, .span_8 {
+        text-align: center;
+        @media @tablet {
+          text-align: left;
+        }
+      }
+
+      padding: 20px;
+      
+      @media @tablet {
+        padding: 30px 20px 0 20px;
+      }
+
+      @media @desktop {
+        padding: 50px @gutter 0 @gutter;
+      }
 
       .logo {
-        width: 354px;
+        width: 170px;
+        @media @tablet {
+          width: 250px;
+        }
+        @media @desktop {
+
+          width: 300px;
+        }
       }
 
       .menu {
+
         padding: 0;
-        margin: 30px 0 0 0;
         list-style-type: none;
+        margin: 20px 0 0 0;
+
+        @media @tablet {
+          margin: 10px 0 0 0;
+          float: right;
+        }
+
+        @media @desktop {
+          margin: 30px 0 0 0;
+        }
+
         li {
-          vertical-align: middle;
-          display: table-cell;
-          padding: 0 30px;
           height: 35px;
+          text-align: center;
+
+          @media @tablet {
+            vertical-align: middle;
+            display: table-cell;
+            padding: 0 20px;
+          }
+
+          @media @desktop {
+            padding: 0 30px;
+          }
+
+          &.register {
+            @media @desktop {
+              border-radius: 100px; border: solid 1px #ffffff;
+            }
+
+          }
+
           a {
             color: #ffffff;
             text-decoration: none;
-            font-size: 17px;
+            font-size: 13px;
+
+            @media @tablet {
+              font-size: 15px;
+            }
+
+            @media @desktop {
+              font-size: 17px;
+            }
           }
         }
       }
     }
 
     .hero {
-      padding: 142px @gutter 0 @gutter;
+      padding: 20px;
+
+      @media @tablet {
+        padding: 142px 20px 0 20px;
+      }
+
+      @media @desktop {
+        padding: 142px @gutter 0 @gutter;
+      }
 
       .verse {
         text-align: center;
-        font-size: 40px;
+        font-size: 25px;
+
+
         font-style: italic;
         color: #ffffff;
+
+        @media @tablet {
+          font-size: 30px;
+        }
+
+        @media @desktop {
+          font-size: 40px;
+        }
 
         &-ref {
           text-align: center;
           color: #ffffff;
           padding: 9px 0 0 0;
-          font-size: 20px;
+          font-size: 15px;
+          @media @tablet {
+            font-size: 17px;
+          }
+
+          @media @desktop {
+            font-size: 20px;
+          }
         }
       }
       .cta {
-        padding: 75px 0 0 0;
+        padding: 35px 0;
+
+        @media @tablet {
+          padding: 55px 0;
+        }
+
+        @media @desktop {
+          padding: 75px 0;
+        }
+
         .button {
           margin: auto;
-          line-height: 50px;
+
           text-align: center;
           color: #fff;
-          width: 190px;
-          height: 50px;
-          border-radius: 100px;
+
           background-color: #49b0e4;
-          font-size: 20px;
           font-family: 'LatoLatinWebLight',"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+
+          width: 120px;
+          height: 30px;
+          border-radius: 100px;
+          line-height: 30px;
+          font-size: 12px;
+
+          @media @tablet {
+            width: 190px;
+            height: 50px;
+            border-radius: 100px;
+            line-height: 50px;
+            font-size: 20px;
+          }
         }
       }
     }
   }
 
   .content {
-    padding: 46px @gutter 0 @gutter;
+
+    padding: 20px;
+
+    @media @tablet {
+      padding: 30px;
+    }
+
+    @media @desktop {
+      padding: 46px @gutter 0 @gutter;
+    }
 
     .title {
       text-align: center;
       font-weight: bold;
       font-family: "LatoLatinWeb","HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-      font-size: 36px;
-      line-height: 50px;
-      margin: 30px 0;
+
+      font-size: 26px;
+      line-height: 40px;
+      margin: 20px 0;
+
+      @media @tablet {
+        font-size: 36px;
+        line-height: 50px;
+        margin: 30px 0;
+      }
+
+
     }
 
     .copy {
@@ -96,16 +226,27 @@ body {
     }
 
     .featured-copy {
-      width: 500px;
+
       border-radius: 6px;
       border: solid 1px #d8d8d8;
       padding: 20px;
       margin: auto;
-      font-size: 30px;
       font-weight: 300;
       font-style: italic;
       text-align: center;
       color: #535353;
+      font-size: 20px;
+
+      @media @tablet {
+        font-size: 20px;
+        width: 350px;
+      }
+
+      @media @desktop {
+        font-size: 30px;
+        width: 500px;
+      }
+
     }
   }
 
@@ -113,16 +254,49 @@ body {
     background: #52246c;
 
     .nav {
-      padding: 30px @gutter;
+      padding: 20px;
+
+      @media @tablet {
+        padding: 30px;
+      }
+
+      @media @desktop {
+        padding: 30px @gutter;
+      }
+
+      .span_6 {
+        text-align: center;
+        @media @desktop {
+          text-align: left;
+        }
+      }
+
+      table {
+        width: 100%;
+        margin: 20px 0;
+        @media @tablet {
+          width: auto;
+          margin: 0;
+        }
+      }
 
       .menu {
         padding: 0;
         margin: 0;
         list-style-type: none;
-        height: 60px;
 
         li {
-          margin: 0 80px 0 0;
+          margin: 0 20px 0 0;
+          text-align: center;
+          @media @tablet {
+            text-align: left;
+            margin: 0 40px 0 0;
+          }
+
+          @media @desktop {
+            margin: 0 80px 0 0;
+          }
+
           padding: 4px 0;
 
           a {
@@ -139,13 +313,20 @@ body {
       }
 
       .adventech {
-        float: right;
+
         height: 30px;
+        @media @tablet {
+          float: right;
+        }
       }
     }
 
     .copyright {
-      padding: 16px 0;
+      padding: 16px;
+      @media @tablet {
+        padding: 16px 0;
+      }
+
       border-top: 1px solid #5c3473;
 
       p {
