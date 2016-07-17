@@ -19,7 +19,12 @@ gulp.task("less", function () {
     .pipe(livereload());
 });
 
-gulp.task("html", function() {
+gulp.task("heroku-build", function(){
+  return gulp.src("src/index.php")
+    .pipe(gulp.dest("dist/"));
+});
+
+gulp.task("html", ["heroku-build"], function() {
   return gulp.src("src/index.html")
     .pipe(embedlr({src: "http://localhost:35729/livereload.js?snipver=1"}))
     .pipe(gulp.dest("dist/"))
