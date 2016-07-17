@@ -1,0 +1,31 @@
+{
+  "name": "pcm-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-less": "^3.1.0",
+    "gulp-embedlr": "^0.5.2",
+    "gulp-watch": "^4.3.8",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-webserver": "^0.9.1",
+    "gulp-livereload": "^3.8.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adventech/pcm-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Adventech/pcm-website/issues"
+  },
+  "homepage": "https://github.com/Adventech/pcm-website#readme"
+}
