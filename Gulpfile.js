@@ -49,17 +49,19 @@ gulp.task("fonts", function(){
 gulp.task("js", function(){
   return gulp.src(["src/scripts/jquery-1.12.2.min.js", "src/scripts/respond.min.js", "src/scripts/main.js"])
     .pipe(concat("scripts.js"))
-    .pipe(gulp.dest("dist/scripts/scripts.js"));
+    .pipe(gulp.dest("dist/scripts"))
+    .pipe(livereload());
 });
 
 gulp.task("watch", function(){
   livereload.listen();
   gulp.watch(["src/style/**/*.less"], ["less"]);
   gulp.watch(["src/*.html"], ["html"]);
+  gulp.watch(["src/scripts/*.js"], ["js"]);
 });
 
 gulp.task("webserver", function() {
-  gulp.src("dist")
+  return gulp.src("dist")
     .pipe(webserver({
       open: true
     }));
