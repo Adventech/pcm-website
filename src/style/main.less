@@ -1,6 +1,7 @@
 @import (inline) "reset.css";
 @import (inline) "fonts.css";
 @import (inline) "responsive.gs.12col.css";
+@import (inline) "forms.css";
 @import "elements.less";
 
 @gutter: 130px;
@@ -18,9 +19,10 @@ body {
   height: 100%;
   width: 100%;
   background: rgba(0,0,0,0.7);
-
+  overflow: scroll;
   display: none;
   .video {
+    display: none;
     margin: 100px auto 0 auto;
     text-align: center;
 
@@ -36,6 +38,53 @@ body {
       @media @desktop {
         width: 800px !important;
         height: 400px !important;
+      }
+    }
+  }
+
+  .register-form {
+    text-align: center;
+    position: relative;
+    height: 100%;
+    overflow: inherit;
+    margin: 100px 0 0 0;
+    @media @desktop {
+      width: 600px;
+      margin: 0 auto;
+
+    }
+    display: none;
+    background: #fff;
+    padding: 20px;
+    font-family: "LatoLatinWeb","HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+
+    h2 {
+
+      font-weight: bold;
+      font-size: 30px;
+
+    }
+
+    input, select {
+      width: 230px !important;
+    }
+
+    form {
+      margin: 40px 0 0 0;
+      label, input {
+        font-size: 14px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input {
+        padding: 8px;
+      }
+
+      fieldset {
+        margin: 0;
       }
     }
   }
@@ -60,6 +109,7 @@ body {
       color: #111;
       .transform(rotate(90deg));
     }
+    z-index:1;
   }
 }
 
@@ -229,7 +279,7 @@ body {
           padding: 75px 0;
         }
 
-        .button {
+        .hero-button {
           margin: auto;
           cursor: pointer;
 
