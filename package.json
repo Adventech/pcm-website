@@ -4,22 +4,30 @@
   "description": "",
   "main": "Gulpfile.js",
   "dependencies": {
+    "debug": "^2.2.0",
+    "ejs": "^2.4.2",
+    "express": "^4.14.0",
     "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
     "gulp-clean": "^0.3.2",
-    "gulp-less": "^3.1.0",
+    "gulp-concat": "^2.6.0",
     "gulp-embedlr": "^0.5.2",
-    "gulp-watch": "^4.3.8",
+    "gulp-less": "^3.1.0",
+    "gulp-livereload": "^3.8.1",
     "gulp-minify-css": "^1.2.4",
+    "gulp-watch": "^4.3.8",
     "gulp-webserver": "^0.9.1",
-    "gulp-livereload": "^3.8.1"
+    "path": "^0.12.7"
   },
   "devDependencies": {
-    "ejs": "^2.4.2",
-    "express": "^4.14.0"
+    "async": "^2.0.1",
+    "nodemon": "^1.10.0",
+    "osmosis": "^1.0.2",
+    "redis": "^2.6.2",
+    "stream-json": "^0.4.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",

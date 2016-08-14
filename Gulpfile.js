@@ -5,7 +5,7 @@ var gulp = require("gulp"),
     watch = require("gulp-watch"),
     embedlr = require("gulp-embedlr"),
     livereload = require("gulp-livereload"),
-    webserver = require("gulp-webserver");
+    nodemon = require("nodemon");
 
 gulp.task("clean", function () {
   return gulp.src("dist")
@@ -13,62 +13,61 @@ gulp.task("clean", function () {
 });
 
 gulp.task("less", function () {
-  return gulp.src("src/style/**/*.less")
+  return gulp.src("src/assets/style/**/*.less")
     .pipe(less())
-    .pipe(gulp.dest("dist/style/"))
+    .pipe(gulp.dest("dist/assets/style/"))
     .pipe(livereload());
 });
 
-gulp.task("heroku-build", function(){
-  return gulp.src("src/index.php")
-    .pipe(gulp.dest("dist/"));
+gulp.task("app", function() {
+  return gulp.src(["src/main.js", "src/routes/**/*", "src/views/**/*"], {base: "src"})
+    .pipe(gulp.dest("dist"));
 });
 
-gulp.task("html", ["heroku-build"], function() {
-  return gulp.src("src/index.html")
+gulp.task("html", ["app"], function() {
+  return gulp.src("dist/views/header.ejs")
     .pipe(embedlr({src: "http://localhost:35729/livereload.js?snipver=1"}))
     .pipe(gulp.dest("dist/"))
     .pipe(livereload());
 });
 
 gulp.task("icon", function(){
-  return gulp.src("src/images/icon/favicon.ico")
-    .pipe(gulp.dest("dist"));
+  return gulp.src("src/assets/images/icon/favicon.ico")
+    .pipe(gulp.dest("dist/assets"));
 });
 
 gulp.task("images", ["icon"], function(){
-  return gulp.src("src/images/**/*.*")
-    .pipe(gulp.dest("dist/images"));
+  return gulp.src("src/assets/images/**/*.*")
+    .pipe(gulp.dest("dist/assets/images"));
 });
 
 gulp.task("fonts", function(){
-  return gulp.src("src/fonts/**/*.*")
-    .pipe(gulp.dest("dist/fonts"));
+  return gulp.src("src/assets/fonts/**/*.*")
+    .pipe(gulp.dest("dist/assets/fonts"));
 });
 
 gulp.task("js", function(){
-  return gulp.src(["src/scripts/jquery-1.12.2.min.js", "src/scripts/respond.min.js", "src/scripts/main.js"])
+  return gulp.src(["src/assets/scripts/jquery-1.12.2.min.js", "src/assets/scripts/respond.min.js", "src/assets/scripts/main.js"])
     .pipe(concat("scripts.js"))
-    .pipe(gulp.dest("dist/scripts"))
+    .pipe(gulp.dest("dist/assets/scripts"))
     .pipe(livereload());
 });
 
 gulp.task("watch", function(){
   livereload.listen();
-  gulp.watch(["src/style/**/*.less"], ["less"]);
-  gulp.watch(["src/*.html"], ["html"]);
-  gulp.watch(["src/scripts/*.js"], ["js"]);
+  gulp.watch(["src/assets/style/**/*.less"], ["less"]);
+  gulp.watch(["src/*.ejs"], ["html"]);
+  gulp.watch(["src/assets/scripts/*.js"], ["js"]);
 });
 
 gulp.task("webserver", function() {
-  return gulp.src("dist")
-    .pipe(webserver({
-      open: true
-    }));
+  nodemon({
+    script: "bin/www"
+  });
 });
 
 gulp.task("compile", ["clean"], function(){
-  return gulp.start("less", "html", "fonts", "images", "js");
+  return gulp.start("less", "html", "app", "fonts", "images", "js");
 });
 
 gulp.task("dev", function(){
